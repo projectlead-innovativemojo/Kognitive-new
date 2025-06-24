@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <header className="md:h-[150px] w-full mx-auto flex justify-center items-center navbar-gradient px-4">
       <div className="w-full max-w-[1260px] mx-auto mt-[51px]">
-        <div className=" rounded-[24px] p-[2px] overflow-hidden bg-gradient-to-b from-[#5F27CD] to-[#00CEC9] max-w-[1260px]">
+        <div className=" rounded-[24px] p-[2px] overflow-hidden border border-[#0F0F1A] max-w-[1260px]">
           <div className="w-full h-full bg-white rounded-[22px] flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] primary-shadow">
             <Link href="/" className="flex items-center">
               <Image
@@ -52,7 +52,7 @@ export default function Header() {
                 <Link
                   href="/"
                   className={cn(
-                    "text-primary text-[18px] ",
+                    "text-[#0F0F1A] text-[18px] ",
                     pathname === "/" && ""
                   )}
                 >
@@ -61,9 +61,9 @@ export default function Header() {
                 <Link
                   href="/#about"
                   className={cn(
-                    "text-primary text-[18px]",
+                    "text-[#0F0F1A] text-[18px]",
                     pathname === "/" &&
-                      "text-transparent bg-clip-text bg-gradient-to-r from-[#5F27CD] to-[#40E0D0]"
+                      "text-[#0F0F1A]"
                   )}
                 >
                   The Kognitiiv.ai Solution
@@ -71,7 +71,7 @@ export default function Header() {
                 <Link
                   href="/#capabilities"
                   className={cn(
-                    "text-primary text-[18px]",
+                    "text-[#0F0F1A] text-[18px]",
                     pathname === "/" && ""
                   )}
                 >
@@ -79,7 +79,7 @@ export default function Header() {
                 </Link>
               </nav>
 
-              <div className="p-[2px] rounded-[12px] bg-gradient-to-b from-[#5F27CD] to-[#00CEC9] md:inline-block hidden primary-shadow ">
+              <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] md:inline-block hidden primary-shadow ">
                 <Button className="bg-white text-primary text-[18px] w-[180px] h-[50px] rounded-[10px]">
                   <Link href="/#contact-us">Join the Waitlist</Link>
                 </Button>
@@ -94,9 +94,9 @@ export default function Header() {
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
-                  <X color="#56AD37" size={24} />
+                  <X color="#0F0F1A" size={24} />
                 ) : (
-                  <Menu color="#56AD37" size={24} />
+                  <Menu color="#0F0F1A" size={24} />
                 )}
               </button>
             </div>
@@ -126,35 +126,35 @@ export default function Header() {
                     aria-label="Toggle menu"
                   >
                     {mobileMenuOpen ? (
-                      <X color="#56AD37" size={24} />
+                      <X color="#0F0F1A" size={24} />
                     ) : (
-                      <Menu color="#56AD37" size={24} />
+                      <Menu color="#0F0F1A" size={24} />
                     )}
                   </button>
                 </div>
                 
                 <Link
                   href="/"
-                  className="text-primary py-2 mt-6 font-rubik"
+                  className="text-[#0F0F1A] py-2 mt-6 font-rubik"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   The Problem
                 </Link>
                 <Link
                   href="/"
-                  className="text-primary py-2 font-rubik"
+                  className="text-[#0F0F1A] py-2 font-rubik"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   The Kognitiiv.ai Solution
                 </Link>
                 <Link
                   href="/"
-                  className="text-primary py-2 font-rubik"
+                  className="text-[#0F0F1A] py-2 font-rubik"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                 How It Works
                 </Link>
-                <div className="p-[2px] rounded-[12px] bg-gradient-to-b from-[#5F27CD] to-[#00CEC9] primary-shadow ">
+                <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] primary-shadow ">
                 <Button className="bg-white text-primary text-[18px] w-full h-[50px] rounded-[10px]">
                   <Link href="/">Join the Waitlist</Link>
                 </Button>

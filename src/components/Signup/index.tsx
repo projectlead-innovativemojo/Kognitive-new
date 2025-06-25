@@ -1,7 +1,6 @@
 import React from "react";
 
 import Image from "next/image";
-
 import Text from "../ui/Text";
 
 const Signup = () => {

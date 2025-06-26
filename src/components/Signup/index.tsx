@@ -1,7 +1,6 @@
 import React from "react";
 
 import Image from "next/image";
-
 import Text from "../ui/Text";
 // import BrainAnimation from "./BrainAnimation";
 
@@ -17,7 +16,7 @@ const Signup = () => {
             height={214}
             className="w-full max-w-[588px]"
           />
-          <Text className="text-transparent text-center text-[#0F0F1A] text-[40px] font-semibold">
+          <Text className="text-center text-[#0F0F1A] text-[40px] font-semibold">
             Kognitiiv.ai
           </Text>
         </div>
@@ -59,13 +58,31 @@ const Signup = () => {
             <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
               <select
                 className="px-[10px] py-[10px] w-full rounded-[10px] font-rubik text-[#0F0F1A] bg-white outline-none border-none"
-                
+                defaultValue=""
               >
                 <option disabled value="" className="text-[#0F0F1A] bg-white font-rubik">
                   What is your interest?
                 </option>
-                <option value="industry2" className="text-[#0F0F1A] bg-white font-rubik">
-                  Select Industry 2
+                <option value="cybersecurity" className="text-[#0F0F1A] bg-white font-rubik">
+                  Cybersecurity & IT Services
+                </option>
+                <option value="healthcare" className="text-[#0F0F1A] bg-white font-rubik">
+                  Medical Offices & Healthcare Clinics
+                </option>
+                <option value="real-estate" className="text-[#0F0F1A] bg-white font-rubik">
+                  Real Estate & Property Management
+                </option>
+                <option value="legal" className="text-[#0F0F1A] bg-white font-rubik">
+                  Law Firms & Legal Services
+                </option>
+                <option value="home-services" className="text-[#0F0F1A] bg-white font-rubik">
+                  Home Services (HVAC, Plumbing, Landscaping, etc.)
+                </option>
+                <option value="agencies" className="text-[#0F0F1A] bg-white font-rubik">
+                  Agencies
+                </option>
+                <option value="other" className="text-[#0F0F1A] bg-white font-rubik">
+                  Other
                 </option>
               </select>
             </div>

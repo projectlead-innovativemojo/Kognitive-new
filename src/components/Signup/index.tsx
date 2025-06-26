@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import Text from "../ui/Text";
+// import BrainAnimation from "./BrainAnimation";
 
 const Signup = () => {
   return (
@@ -22,24 +23,24 @@ const Signup = () => {
         </div>
         <div className="w-full md:max-w-[514px] max-w-full">
           <form className="w-full max-w-full md:max-w-[514px] p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px] mt-[60px] mb-[268px]">
-            <div className="flex flex-col gap-[24px] md:flex-row mb-[30px]">
+            <div className="flex flex-col gap-[12px] md:flex-row mb-[12px]">
               <div className="p-[2px] rounded-[12px] border border-[#0F0F1A]">
                 <input
                   type="text"
                   placeholder="Name"
-                  className="px-[10px] py-[10px] w-full md:w-[150px] rounded-[10px] text-black outline-none bg-white border-none"
+                  className="px-[10px] py-[10px] w-full max-w-full md:max-w-[214px] rounded-[10px] text-black outline-none bg-white border-none"
                 />
               </div>
               <div className="p-[2px] rounded-[12px] border border-[#0F0F1A]">
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="px-[10px] py-[10px] w-full md:w-[260px] rounded-[10px] text-black outline-none bg-white border-none"
+                  className="px-[10px] py-[10px] w-full w-full max-w-full md:max-w-[214px] rounded-[10px] text-black outline-none bg-white border-none"
                 />
               </div>
             </div>
 
-            <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
+            <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
               <input
                 type="email"
                 placeholder="Email"
@@ -47,7 +48,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
+            <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
               <input
                 type="text"
                 placeholder="Company"
@@ -55,7 +56,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[70px]">
+            <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
               <select
                 className="px-[10px] py-[10px] w-full rounded-[10px] font-rubik text-[#0F0F1A] bg-white outline-none border-none"
                 

@@ -1,30 +1,29 @@
-"use client";
+import Spline from "@splinetool/react-spline/next";
 
-const BrainAnimation = () => (
-  <div className="relative w-full h-full min-h-[400px] max-w-[900px] overflow-hidden">
-    <iframe
-      src="https://my.spline.design/particleaibrain-pXaKjoELQP2i6wEvTPt9OfB2/"
-      frameBorder="0"
-      width="100%"
-      height="100%"
-      style={{ minHeight: 400, borderRadius: 16, width: '100%', height: '100%' }}
-      allow="fullscreen"
-      title="3D Brain Animation"
-    />
-    {/* Overlay div to cover watermark (temporary, not for production) */}
-    <div
-      style={{
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        height: '40px', // Adjust as needed to cover the watermark
-        background: 'black',
-        zIndex: 10,
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-);
-
-export default BrainAnimation; 
+export default function BrainAnimation() {
+  return (
+    <main className="relative">
+      <Spline
+        className=""
+        // style={{ pointerEvents: 'none' }}
+        // scene="https://prod.spline.design/9U1CDcucwh5wRsJl/scene.splinecode"
+        scene="https://prod.spline.design/9U1CDcucwh5wRsJl/scene.splinecode"  
+      />
+      {/* Overlay div to cover watermark (temporary, not for production) */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 19,
+          right: 16,
+          // left: 0,
+          maxWidth:"200px",
+          width: '100%',
+          height: '50px', // Adjust as needed to cover the watermark
+          background: 'white',
+          zIndex: 10,
+          pointerEvents: 'none',
+        }}
+      />
+    </main>
+  );
+}

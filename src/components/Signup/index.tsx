@@ -35,7 +35,7 @@ const Signup = () => {
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="px-[10px] py-[10px] w-full w-full max-w-full md:max-w-[214px] rounded-[10px] text-black outline-none bg-white border-none"
+                  className="px-[10px] py-[10px] w-full max-w-full md:max-w-[214px] rounded-[10px] text-black outline-none bg-white border-none"
                 />
               </div>
             </div>

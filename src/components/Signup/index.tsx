@@ -6,7 +6,7 @@ import BrainAnimation from "./BrainAnimation";
 
 const Signup = () => {
   return (
-    <div className="w-full h-full bg-white flex justify-center items-center px-4 mt-[80px]">
+    <div className="w-full h-full bg-white flex justify-center items-center px-4 md:mt-[80px]">
       <div className="w-full h-full bg-white max-w-[1260px] flex md:flex-row flex-col justify-between items-start md:gap-[50px]">
         <div className="w-full">
           {/* <Image

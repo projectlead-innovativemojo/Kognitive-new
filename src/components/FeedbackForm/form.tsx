@@ -124,7 +124,7 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] mb-[208px]">
+    <div className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] md:mb-[208px] mb-[101px]">
       <Image
         src={feedbackbg}
         alt=""
@@ -141,44 +141,51 @@ const FeedbackForm = () => {
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-full md:max-w-[677px] relative z-10 py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px]">
-        <div className="flex flex-col gap-[12px] md:flex-row mb-[32px]">
-          <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] w-full max-w-full md:max-w-1/2">
+        <div className="flex flex-col gap-[32px] md:gap-[12px] md:flex-row mb-[32px]">
+          <div className="w-full max-w-full md:max-w-1/2 element-with-gradient-border-rounded-input ">
+          <div className="inner-content-input w-full">
             <input
               type="text"
               name="name"
               placeholder="Name"
               value={form.name}
               onChange={handleChange}
-              className="px-[10px] py-[10px] w-full max-w-full md:max-w-1/2 rounded-[10px] text-black outline-none bg-white border-none"
+              className="px-[10px] py-[10px] w-full h-full max-w-full rounded-[13px] text-black outline-none bg-white"
               required
             />
+            </div>
           </div>
-          <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] w-full max-w-full md:max-w-1/2">
+          <div className="w-full max-w-full md:max-w-1/2 element-with-gradient-border-rounded-input ">
+            <div className="inner-content-input w-full">
             <input
               type="text"
               name="lastName"
               placeholder="Last Name"
               value={form.lastName}
               onChange={handleChange}
-              className="px-[10px] py-[10px] w-full max-w-full md:max-w-1/2 rounded-[10px] text-black outline-none bg-white border-none"
+              className="px-[10px] py-[10px] w-full h-full max-w-full rounded-[13px] text-black outline-none bg-white "
               required
             />
+            </div>
           </div>
         </div>
 
-        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
-          <input
+        <div className="w-full max-w-full element-with-gradient-border-rounded-input mb-[30px]">
+        <div className="inner-content-input w-full">
+        <input
             type="email"
             name="email"
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
-            className="px-[10px] py-[10px] w-full rounded-[10px] text-black outline-none bg-white border-none"
+            className="px-[10px] py-[10px] w-full rounded-[13px] text-black outline-none bg-white"
             required
           />
+          </div>
         </div>
 
-        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
+        <div className="w-full max-w-full element-with-gradient-border-rounded-input mb-[30px]">
+        <div className="inner-content-input w-full">
           <input
             type="text"
             name="company"
@@ -186,14 +193,16 @@ const FeedbackForm = () => {
             value={form.company}
             required
             onChange={handleChange}
-            className="px-[10px] py-[10px] w-full rounded-[10px] text-black outline-none bg-white border-none"
+            className="px-[10px] py-[10px] w-full rounded-[13px] text-black outline-none bg-white"
           />
+          </div>
         </div>
-
-        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
+{/*         <div className="w-full max-w-full element-with-gradient-border-rounded-input mb-[30px]">
+ */}
+        <div className="element-with-gradient-border-rounded-input mb-[30px]">
           <Listbox value={selectedIndustry} onChange={handleIndustryChange}>
             <div className="relative">
-              <Listbox.Button className="px-[10px] py-[10px] w-full rounded-[10px] font-rubik text-[#0F0F1A] bg-white outline-none border-none text-left relative">
+              <Listbox.Button className="px-[10px] py-[10px] w-full rounded-[13px] font-rubik text-[#0F0F1A] bg-white outline-none border-none text-left relative">
                 {selectedIndustry ? (
                   <span>{selectedIndustry.label}</span>
                 ) : (
@@ -276,7 +285,7 @@ const FeedbackForm = () => {
           </button>
         </div>
       </form>
-        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[120px]">
+        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[120px] px-5 md:text-left text-center">
           First 100 on the waitlist get early access + bonus features
         </Text>
         </div>

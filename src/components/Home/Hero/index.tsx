@@ -13,28 +13,28 @@ const Hero = () => {
       className="w-full h-full">
       <div className="w-full h-full flex justify-center items-center flex-col">
         <Navbar />
-        <div className="w-full h-full max-w-[1200px] mt-[128px]">
-        <BackgroundBeamsWithCollision >
-          <Text as="h1" className="mb-[50px] text-[#F5F5FA]">
+        <div className="w-full h-full max-w-[1200px] md:mt-[128px] mt-[60px]">
+          <BackgroundBeamsWithCollision>
+          <Text as="h1" className="mb-[50px] text-[#F5F5FA] text-center">
             Hire 6 AI Voice Employees for{" "}
             <span className="bg-gradient-to-r from-[#5F27CD] to-[#40E0D0] via-[#5F27CD] bg-clip-text text-transparent">
               {" "}
               Less Than $1/Hour
             </span>
           </Text>
-          <Text as ="h2" className="text-[#F5F5FA] text-center mb-[189px] font-normal leading-[45px]">
+          <Text as ="h2" className="text-[#F5F5FA] text-center mb-10 md:mb-[189px] font-normal md:leading-[45px]">
             <span className="bg-gradient-to-r from-[#5F27CD] to-[#40E0D0] via-[#5F27CD] bg-clip-text text-transparent font-bold">
               {" "}
               Kognitiiv.ai
             </span>{" "}
             gives your business a full team of AI voice agents that handle
-            sales, support, marketing, and more <br /> 24/7, no breaks, no burnout
+            sales, support, marketing, and more <br className="md:block hidden" /> 24/7, no breaks, no burnout
           </Text>
-          <Text className="text-[24px] font-medium text-[#F5F5FA] text-center">
-            Be among the first to access this game-changing workforce. <br /> Join the
+          <Text className="md:text-[24px] text-[20px] font-medium text-[#F5F5FA] text-center">
+            Be among the first to access this game-changing workforce. <br className="md:block hidden" />Join the
             waitlist to claim early access + exclusive launch perks
           </Text>
-        </BackgroundBeamsWithCollision>
+          </BackgroundBeamsWithCollision>
           <GoogleGeminiEffectAnimation />
         </div>
       </div>

@@ -36,7 +36,8 @@ export default function Header() {
     <header className="md:h-[150px] w-full mx-auto flex justify-center items-center px-4">
       <div className="w-full max-w-[1260px] mx-auto mt-[51px]">
         <div className=" rounded-[24px] p-[2px] overflow-hidden border border-[#0F0F1A] max-w-[1260px]">
-          <div className="w-full h-full bg-[#0F0F1A] border border-white rounded-[22px] flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] primary-shadow">
+        <div className="element-with-gradient-border-rounded">
+          <div className="w-full h-full bg-[#0F0F1A] inner-content  flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] primary-shadow">
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/Logo.svg"
@@ -77,12 +78,13 @@ export default function Header() {
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
-                  <X color="#0F0F1A" size={24} />
+                  <X color="#fff" size={24} />
                 ) : (
-                  <Menu color="#0F0F1A" size={24} />
+                  <Menu color="#fff" size={24} />
                 )}
               </button>
             </div>
+          </div>
           </div>
         </div>
 
@@ -116,26 +118,13 @@ export default function Header() {
                   </button>
                 </div>
                 
-                <Link
-                  href="/"
-                  className="text-[#0F0F1A] py-2 mt-6 font-rubik"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  The Problem
-                </Link>
+                
                 <Link
                   href="/"
                   className="text-[#0F0F1A] py-2 font-rubik"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  The Kognitiiv.ai Solution
-                </Link>
-                <Link
-                  href="/"
-                  className="text-[#0F0F1A] py-2 font-rubik"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                How It Works
+                Our Employees
                 </Link>
                 <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] primary-shadow ">
                 <Button className="bg-white text-primary text-[18px] w-full h-[50px] rounded-[10px]">

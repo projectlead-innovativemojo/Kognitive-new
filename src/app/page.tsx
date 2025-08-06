@@ -5,7 +5,6 @@ import Reviews from "@/components/Home/Reviews";
 export default function Home() {
   return (
     <>
-      
       <Hero />
       <Cards />
       <FeedbackForm />

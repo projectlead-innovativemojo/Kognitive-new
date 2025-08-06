@@ -24,10 +24,10 @@ export default function GoogleGeminiEffectAnimation() {
   ];
 
   return (
-    <div className="w-full h-full relative bottom-[200px]">
+    <div className="w-full h-full relative md:bottom-[200px]">
       <div
         ref={ref}
-        className="h-[300vh] w-full overflow-clip"
+        className="md:h-[300vh] h-[100vh] w-full overflow-clip"
       >
         <GoogleGeminiEffect
           pathLengths={pathLengths}

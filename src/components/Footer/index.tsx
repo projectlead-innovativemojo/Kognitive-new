@@ -18,7 +18,7 @@ const Footer = () => {
           background:
             "linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%)",
         }}></div>
-      <div className="flex justify-between items-start max-w-[762px] mx-auto mb-[100px] relative z-10">
+      <div className="flex md:flex-row flex-col justify-center md:justify-between md:gap-0 gap-10 px-5 items-start max-w-[762px] mx-auto md:mb-[100px] mb-[40px] relative z-10">
         <Link href="/">
           <Image src={footerlogo} alt="" />
         </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="w-full h-[1px] bg-[#0F0F1A]/10 mb-[40px]"></div>
-      <div className="w-full max-w-[1260px] flex justify-end items-center gap-[115px] mob:gap-2 mb-[58px] relative z-10">
+      <div className="w-full max-w-[1260px] flex md:flex-row flex-col justify-center md:justify-end items-center md:gap-[115px] gap-7 mb-[58px] relative z-10">
         <Text className="text-[18px] font-normal text-[#0F0F1A]">
           Built by <span className="text-[#F4D06F]"> Innovative Mojo</span>
         </Text>

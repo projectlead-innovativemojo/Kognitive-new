@@ -15,9 +15,9 @@ import x from "@/public/images/home/x.svg";
 const Reviews = () => {
   return (
     <>
-      <div className="w-full h-full flex flex-wrap gap-[25px] justify-center items-center max-w-[1260px] mx-auto mb-[96px]">
+      <div className="w-full h-full flex flex-wrap gap-[25px] justify-center items-center max-w-[1260px] mx-auto mb-[96px] px-5">
         {/* review 1 */}
-        <div className="w-full bg-[#0F0F1A] max-w-[385px] min-h-[395px] flex flex-col justify-center items-center rounded-[8px] px-5">
+        <div className="w-full bg-[#0F0F1A] max-w-[385px] min-h-[395px] rounded-[10px] flex flex-col justify-center items-center px-5 border-3 border-t-[#5F27CD]  border-l-[#00CEC9] border-b-[#00CEC9] border-r-[#5F25CD]">
           <Image src={review1} alt="" width={60} height={60} />
           <Text className="mt-[38px] mb-[25px] text-center text-[18px] font-bold text-[#F5F5FA]">
             Laura M., Founder of an e-commerce startup
@@ -28,8 +28,9 @@ const Reviews = () => {
             It’s like having a full team working day and night without stopping”
           </Text>
         </div>
+
         {/* review 2 */}
-        <div className="w-full bg-[#0F0F1A] max-w-[385px] min-h-[395px] flex flex-col justify-center items-center rounded-[8px] px-5">
+        <div className="w-full bg-[#0F0F1A] max-w-[385px] min-h-[395px] flex flex-col justify-center items-center rounded-[10px] px-5 border-3 border-t-[#5F27CD]  border-l-[#00CEC9] border-b-[#00CEC9] border-r-[#5F25CD]">
           <Image src={review2} alt="" width={60} height={60} />
           <Text className="mt-[38px] mb-[25px] text-center text-[18px] font-bold text-[#F5F5FA]">
             Andrew G., Head of Customer Service at a fintech
@@ -42,7 +43,7 @@ const Reviews = () => {
           </Text>
         </div>
         {/* review 3 */}
-        <div className="w-full bg-[#0F0F1A] max-w-[385px] min-h-[395px] flex flex-col justify-center items-center rounded-[8px] px-5">
+        <div className="w-full bg-[#0F0F1A] max-w-[385px] min-h-[395px] flex flex-col justify-center items-center rounded-[10px] px-5 border-3 border-t-[#5F27CD]  border-l-[#00CEC9] border-b-[#00CEC9] border-r-[#5F25CD]">
           <Image src={review3} alt="" width={60} height={60} />
           <Text className="mt-[38px] mb-[25px] text-center text-[18px] font-bold text-[#F5F5FA]">
             Camila R., Digital Marketing Specialist
@@ -55,7 +56,7 @@ const Reviews = () => {
           </Text>
         </div>
       </div>
-      <div className="w-full max-w-[650px] mx-auto">
+      <div className="w-full max-w-[650px] mx-auto px-5">
         <Text className="text-[#0F0F1A] text-[24px] font-medium text-center mb-[61px]">
           We’ll be showcasing how each one works on social media
           <span className="bg-gradient-to-r from-[#5F27CD] to-[#40E0D0] via-[#5F27CD] bg-clip-text text-transparent">
@@ -83,7 +84,7 @@ const Reviews = () => {
           background:
             "linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%)",
         }}
-        className="w-full h-[2px] mb-[139px]"></div>
+        className="w-full h-[2px] md:mb-[139px] mb-[40px]"></div>
     </>
   );
 };

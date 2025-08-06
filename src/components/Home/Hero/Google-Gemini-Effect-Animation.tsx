@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import GoogleGeminiEffect from "@/components/ui/google-gemini-effect";
 import React from "react";
 import { useScroll, useTransform } from "motion/react";

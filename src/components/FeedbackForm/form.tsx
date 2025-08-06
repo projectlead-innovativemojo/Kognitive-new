@@ -1,6 +1,9 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import { Listbox } from '@headlessui/react';
+import { Listbox } from "@headlessui/react";
+import Image from "next/image";
+import Text from "@/components/ui/Text";
+import feedbackbg from "@/public/images/home/feedbackbg.svg";
 
 const FeedbackForm = () => {
   const industryOptions = [
@@ -10,8 +13,8 @@ const FeedbackForm = () => {
       bullets: [
         "These companies already value automation and tech.",
         "They often get <strong>high-volume, low-complexity calls</strong> (password resets, FAQs, onboarding) that are <strong>perfect for AI agents</strong>.",
-        "Bonus: They’ll appreciate the technical capabilities like RAG, STT/TTS, and GCP infrastructure."
-      ]
+        "Bonus: They’ll appreciate the technical capabilities like RAG, STT/TTS, and GCP infrastructure.",
+      ],
     },
     {
       value: "healthcare",
@@ -19,8 +22,8 @@ const FeedbackForm = () => {
       bullets: [
         "Constant calls for <strong>appointments, insurance questions, lab results, follow-ups</strong> — most of which can be automated.",
         "High pressure on admin staff = big opportunity to offload work to a friendly AI receptionist.",
-        "HIPAA-safe language in your messaging will be a big win here."
-      ]
+        "HIPAA-safe language in your messaging will be a big win here.",
+      ],
     },
     {
       value: "real-estate",
@@ -28,8 +31,8 @@ const FeedbackForm = () => {
       bullets: [
         "They deal with <strong>renters, buyers, sellers, maintenance calls</strong>, and a ton of scheduling.",
         "AI agents can handle <strong>after-hours inquiries</strong>, free up leasing agents, and provide 24/7 lead capture.",
-        "High churn and high lead cost = your system can help improve conversion."
-      ]
+        "High churn and high lead cost = your system can help improve conversion.",
+      ],
     },
     {
       value: "legal",
@@ -37,8 +40,8 @@ const FeedbackForm = () => {
       bullets: [
         "Many small-to-midsize law firms need help managing intake calls, appointment setting, and follow-ups.",
         "AI can act as a legal intake assistant — especially for firms that don’t want to miss leads.",
-        "You can pitch this as a way to filter tire-kickers while keeping real leads warm."
-      ]
+        "You can pitch this as a way to filter tire-kickers while keeping real leads warm.",
+      ],
     },
     {
       value: "home-services",
@@ -46,14 +49,14 @@ const FeedbackForm = () => {
       bullets: [
         "AI agents can <strong>book appointments, provide availability, and answer common questions</strong> while the team is in the field.",
         "These companies often miss calls or get overwhelmed during peak season.",
-        "They typically <strong>don’t have a call center</strong>, so a reliable AI “receptionist” feels like a huge upgrade."
-      ]
+        "They typically <strong>don’t have a call center</strong>, so a reliable AI “receptionist” feels like a huge upgrade.",
+      ],
     },
     {
       value: "other",
       label: "Other",
-      bullets: []
-    }
+      bullets: [],
+    },
   ];
   const [form, setForm] = useState({
     name: "",
@@ -68,14 +71,22 @@ const FeedbackForm = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleIndustryChange = (option: typeof industryOptions[0]) => {
+  const handleIndustryChange = (option: (typeof industryOptions)[0]) => {
     setSelectedIndustry(option);
     // Compose the full option content as plain text with bullets
-    const bulletsText = option.bullets.length > 0 ? '\n' + option.bullets.map(b => '• ' + b.replace(/<[^>]+>/g, '')) .join('\n') : '';
+    const bulletsText =
+      option.bullets.length > 0
+        ? "\n" +
+          option.bullets.map((b) => "• " + b.replace(/<[^>]+>/g, "")).join("\n")
+        : "";
     setForm({ ...form, interest: option.label + bulletsText });
   };
 
@@ -93,47 +104,69 @@ const FeedbackForm = () => {
       const data = await res.json();
       if (res.ok && !data.error) {
         setSuccess(true);
-        setForm({ name: "", lastName: "", email: "", company: "", interest: "", message: "" });
+        setForm({
+          name: "",
+          lastName: "",
+          email: "",
+          company: "",
+          interest: "",
+          message: "",
+        });
       } else {
         setError(data.error || "Something went wrong");
       }
     } catch (err) {
       setError("Server error");
-      console.error(err)
+      console.error(err);
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <div className="w-full md:max-w-[514px] max-w-full">
-      <form onSubmit={handleSubmit} className="w-full max-w-full md:max-w-[514px] py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px] mt-[60px] mb-[268px]">
-        <div className="flex flex-col gap-[12px] md:flex-row mb-[12px]">
-          <div className="p-[2px] rounded-[12px] border border-[#0F0F1A]">
+    <div className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] mb-[208px]">
+      <Image
+        src={feedbackbg}
+        alt=""
+        className="absolute top-[33%] left-0"
+      />
+      <div
+        style={{
+          background:
+            "linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%)",
+        }}
+        className="absolute w-full h-full blur-[500px] bottom-0"
+      ></div>
+      <div className="relative z-10 mx-auto flex flex-col justify-center items-center">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-full md:max-w-[677px] relative z-10 py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px]">
+        <div className="flex flex-col gap-[12px] md:flex-row mb-[32px]">
+          <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] w-full max-w-full md:max-w-1/2">
             <input
               type="text"
               name="name"
               placeholder="Name"
               value={form.name}
               onChange={handleChange}
-              className="px-[10px] py-[10px] w-full max-w-full md:max-w-[214px] rounded-[10px] text-black outline-none bg-white border-none"
+              className="px-[10px] py-[10px] w-full max-w-full md:max-w-1/2 rounded-[10px] text-black outline-none bg-white border-none"
               required
             />
           </div>
-          <div className="p-[2px] rounded-[12px] border border-[#0F0F1A]">
+          <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] w-full max-w-full md:max-w-1/2">
             <input
               type="text"
               name="lastName"
               placeholder="Last Name"
               value={form.lastName}
               onChange={handleChange}
-              className="px-[10px] py-[10px] w-full max-w-full md:max-w-[214px] rounded-[10px] text-black outline-none bg-white border-none"
+              className="px-[10px] py-[10px] w-full max-w-full md:max-w-1/2 rounded-[10px] text-black outline-none bg-white border-none"
               required
             />
           </div>
         </div>
 
-        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
+        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
           <input
             type="email"
             name="email"
@@ -145,7 +178,7 @@ const FeedbackForm = () => {
           />
         </div>
 
-        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
+        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
           <input
             type="text"
             name="company"
@@ -157,7 +190,7 @@ const FeedbackForm = () => {
           />
         </div>
 
-        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[12px]">
+        <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] mb-[30px]">
           <Listbox value={selectedIndustry} onChange={handleIndustryChange}>
             <div className="relative">
               <Listbox.Button className="px-[10px] py-[10px] w-full rounded-[10px] font-rubik text-[#0F0F1A] bg-white outline-none border-none text-left relative">
@@ -168,8 +201,19 @@ const FeedbackForm = () => {
                 )}
                 {/* Dropdown arrow icon */}
                 <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 8L10 12L14 8" stroke="#0F0F1A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M6 8L10 12L14 8"
+                      stroke="#0F0F1A"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </span>
               </Listbox.Button>
@@ -180,15 +224,22 @@ const FeedbackForm = () => {
                       key={option.value}
                       value={option}
                       className={({ active }) =>
-                        `cursor-pointer select-none px-4 py-3 ${active ? 'bg-gray-100' : ''}`
-                      }
-                    >
+                        `cursor-pointer select-none px-4 py-3 ${
+                          active ? "bg-gray-100" : ""
+                        }`
+                      }>
                       <div>
-                        <div className="font-semibold text-[18px] text-[#0F0F1A]">{index+1}- {option.label}</div>
+                        <div className="font-semibold text-[18px] text-[#0F0F1A]">
+                          {index + 1}- {option.label}
+                        </div>
                         {option.bullets.length > 0 && (
                           <ul className="list-disc pl-5 text-[16px] font-rubik text-[#0F0F1A] mt-0.5 space-y-0.5">
                             {option.bullets.map((b, i) => (
-                              <li className="font-rubik" key={i} dangerouslySetInnerHTML={{ __html: b }} />
+                              <li
+                                className="font-rubik"
+                                key={i}
+                                dangerouslySetInnerHTML={{ __html: b }}
+                              />
                             ))}
                           </ul>
                         )}
@@ -209,19 +260,26 @@ const FeedbackForm = () => {
           </ul>
         )} */}
 
-        {success && <div className="text-green-600 my-2 text-center">Thank you for your feedback!</div>}
+        {success && (
+          <div className="text-green-600 my-2 text-center">
+            Thank you for your feedback!
+          </div>
+        )}
         {error && <div className="text-red-600 mb-2">{error}</div>}
 
         <div className="rounded-[12px]">
           <button
             type="submit"
             className="w-full h-[50px] rounded-[10px] bg-[#0F0F1A] text-white text-[18px] primary-shadow"
-            disabled={submitting}
-          >
+            disabled={submitting}>
             {submitting ? "Submitting..." : "Join the Waitlist"}
           </button>
         </div>
       </form>
+        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[120px]">
+          First 100 on the waitlist get early access + bonus features
+        </Text>
+        </div>
     </div>
   );
 };

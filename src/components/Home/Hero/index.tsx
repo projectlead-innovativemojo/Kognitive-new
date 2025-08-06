@@ -1,7 +1,8 @@
 import React from "react";
 import Text from "@/components/ui/Text";
 import GoogleGeminiEffectAnimation from "./Google-Gemini-Effect-Animation";
-
+import Navbar from "@/components/Navbar";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 const Hero = () => {
   return (
     <div
@@ -10,8 +11,10 @@ const Hero = () => {
           "linear-gradient(359.63deg, #FFFFFF 0.34%, #8F95BB 12.27%, #1A1A28 22.13%, #191923 51.41%, #1A1A28 81.96%, #1A1A28 99.69%)",
       }}
       className="w-full h-full">
-      <div className="w-full h-full flex justify-center items-center">
-        <div className="w-full h-full max-w-[1200px]">
+      <div className="w-full h-full flex justify-center items-center flex-col">
+        <Navbar />
+        <div className="w-full h-full max-w-[1200px] mt-[128px]">
+        <BackgroundBeamsWithCollision >
           <Text as="h1" className="mb-[50px] text-[#F5F5FA]">
             Hire 6 AI Voice Employees for{" "}
             <span className="bg-gradient-to-r from-[#5F27CD] to-[#40E0D0] via-[#5F27CD] bg-clip-text text-transparent">
@@ -31,6 +34,7 @@ const Hero = () => {
             Be among the first to access this game-changing workforce. <br /> Join the
             waitlist to claim early access + exclusive launch perks
           </Text>
+        </BackgroundBeamsWithCollision>
           <GoogleGeminiEffectAnimation />
         </div>
       </div>

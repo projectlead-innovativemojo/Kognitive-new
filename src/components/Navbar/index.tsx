@@ -33,10 +33,10 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="md:h-[150px] w-full mx-auto flex justify-center items-center navbar-gradient px-4">
+    <header className="md:h-[150px] w-full mx-auto flex justify-center items-center px-4">
       <div className="w-full max-w-[1260px] mx-auto mt-[51px]">
         <div className=" rounded-[24px] p-[2px] overflow-hidden border border-[#0F0F1A] max-w-[1260px]">
-          <div className="w-full h-full bg-white rounded-[22px] flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] primary-shadow">
+          <div className="w-full h-full bg-[#0F0F1A] border border-white rounded-[22px] flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] primary-shadow">
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/Logo.svg"
@@ -50,38 +50,20 @@ export default function Header() {
             {/* Desktop Navigation */}
             <div className="flex items-center gap-[128px]">
               <nav className="hidden md:flex items-center space-x-[25px]">
-                <Link
-                  href="/"
-                  className={cn(
-                    "text-[#0F0F1A] text-[18px] ",
-                    pathname === "/" && ""
-                  )}
-                >
-                  The Problem
-                </Link>
-                <Link
-                  href="/#about"
-                  className={cn(
-                    "text-[#0F0F1A] text-[18px]",
-                    pathname === "/" &&
-                      "text-[#0F0F1A]"
-                  )}
-                >
-                  The Kognitiiv.ai Solution
-                </Link>
+               
                 <Link
                   href="/#capabilities"
                   className={cn(
-                    "text-[#0F0F1A] text-[18px]",
+                    "text-[#F5F5FA] text-[18px]",
                     pathname === "/" && ""
                   )}
                 >
-                  How It Works
+                  Our Employees
                 </Link>
               </nav>
 
               <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] md:inline-block hidden primary-shadow ">
-                <Button className="bg-white text-primary text-[18px] w-[180px] h-[50px] rounded-[10px]">
+                <Button className="bg-transparent text-[#F5F5FA] border border-white text-[18px] w-[180px] h-[50px] rounded-[10px]">
                   <Link href="/#contact-us">Join the Waitlist</Link>
                 </Button>
               </div>

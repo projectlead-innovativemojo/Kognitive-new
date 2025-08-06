@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
-import Signup from "@/components/FeedbackForm";
+import Hero from "@/components/Home/Hero";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <Signup />
+      <Hero />
     </>
   );
 }

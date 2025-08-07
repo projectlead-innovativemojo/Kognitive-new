@@ -137,7 +137,7 @@ const FeedbackForm = () => {
         }}
         className="absolute w-full h-full blur-[500px] bottom-0"
       ></div>
-      <div className="relative z-10 mx-auto flex flex-col justify-center items-center">
+      <div className="relative z-10 mx-auto flex flex-col justify-center items-center px-5">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-full md:max-w-[677px] relative z-10 py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px]">
@@ -170,8 +170,8 @@ const FeedbackForm = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-full element-with-gradient-border-rounded-input mb-[30px]">
-        <div className="inner-content-input w-full">
+        <div className="w-full max-w-full element-with-gradient-border-rounded-email mb-[30px]">
+        <div className="inner-content-email w-full">
         <input
             type="email"
             name="email"

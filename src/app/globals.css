@@ -184,3 +184,19 @@ box-shadow: 0px 10px 15px -5px #5F27CD80;
   height: 100%;
   width: 100%;
 }
+.element-with-gradient-border-rounded-email {
+  position: relative;
+  border-radius: 15px;
+  padding: 1px; /* Thin spacing for the border effect */
+  background: linear-gradient(90deg, #5F27CD 0.14%, #00CEC9 82.39%); /* Border gradient */
+}
+
+.element-with-gradient-border-rounded-email > .inner-content-email {
+  border-radius: 12px; /* Slightly smaller to fit inside */
+  background-color: #0F0F1A; /* Your inner background */
+  height: 100%;
+  width: 100%;
+}
+
+
+

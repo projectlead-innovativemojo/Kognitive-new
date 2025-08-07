@@ -35,8 +35,8 @@ const Hero = () => {
             waitlist to claim early access + exclusive launch perks
           </Text>
           </BackgroundBeamsWithCollision>
-          <GoogleGeminiEffectAnimation />
         </div>
+          <GoogleGeminiEffectAnimation />
       </div>
     </div>
   );

@@ -127,17 +127,14 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] md:mb-[208px] mb-[101px]">
+    <div id="feedback-form" className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] md:mb-[208px] mb-[101px]">
       <Image
         src={feedbackbg}
         alt=""
         className="absolute top-[33%] left-0"
       />
       <div
-        style={{
-          background:
-            "linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%)",
-        }}
+       
         className="absolute w-full h-full blur-[500px] bottom-0"
       ></div>
       <div className="relative z-10 mx-auto flex flex-col justify-center items-center px-5">

@@ -171,11 +171,25 @@ box-shadow: 0px 10px 15px -5px #5F27CD80;
   width: 100%;
 }
 
+.element-with-black-border-white-bg {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  background: #000000; /* Black border */
+}
+
+.element-with-black-border-white-bg > .inner-content {
+  border-radius: 18px; /* Slightly smaller to fit inside */
+  background-color: #FFFFFF; /* White background */
+  height: 100%;
+  width: 100%;
+}
+
 .element-with-gradient-border-rounded-input {
   position: relative;
   border-radius: 15px;
-  padding: 1px; /* Thin spacing for the border effect */
-  background: linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%); /* Border gradient */
+  border: 1px solid #000000;
+  /* background: linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%);  */
 }
 
 .element-with-gradient-border-rounded-input > .inner-content-input {
@@ -187,8 +201,7 @@ box-shadow: 0px 10px 15px -5px #5F27CD80;
 .element-with-gradient-border-rounded-email {
   position: relative;
   border-radius: 15px;
-  padding: 1px; /* Thin spacing for the border effect */
-  background: linear-gradient(90deg, #5F27CD 0.14%, #00CEC9 82.39%); /* Border gradient */
+  border: 1px solid #000000;
 }
 
 .element-with-gradient-border-rounded-email > .inner-content-email {

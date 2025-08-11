@@ -29,7 +29,7 @@ const ThankYouHero = () => {
               {" "}
               Kognitiiv.ai
             </span>{" "}
-            We’ll notify you when your AI workforce is ready.
+           will notify you when your AI workforce is ready.
              <br className="md:block hidden" /> In the meantime, meet your team
           </Text>
          <Image src={videopng} alt="" width={778} height={422} className="mx-auto mb-[86px]" />

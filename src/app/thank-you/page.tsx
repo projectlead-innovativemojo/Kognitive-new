@@ -41,7 +41,7 @@ const ThankYou = () => {
           background:
             "linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%)",
         }}
-        className="w-full h-[2px] md:mb-[139px] mb-[40px]"></div>
+        className="w-full h-[2px] md:mb-[50px] mb-[40px]"></div>
     </>
   );
 };

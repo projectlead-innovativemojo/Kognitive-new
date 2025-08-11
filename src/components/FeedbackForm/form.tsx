@@ -4,8 +4,10 @@ import { Listbox } from "@headlessui/react";
 import Image from "next/image";
 import Text from "@/components/ui/Text";
 import feedbackbg from "@/public/images/home/feedbackbg.svg";
+import { useRouter } from "next/navigation";
 
 const FeedbackForm = () => {
+  const router = useRouter();
   const industryOptions = [
     {
       value: "cybersecurity",
@@ -112,6 +114,7 @@ const FeedbackForm = () => {
           interest: "",
           message: "",
         });
+        router.push("/thank-you");
       } else {
         setError(data.error || "Something went wrong");
       }
@@ -285,7 +288,7 @@ const FeedbackForm = () => {
           </button>
         </div>
       </form>
-        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[120px] px-5 md:text-left text-center">
+        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[80px] px-5  text-center">
           First 100 on the waitlist get early access + bonus features
         </Text>
         </div>

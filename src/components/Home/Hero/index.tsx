@@ -22,7 +22,7 @@ const Hero = () => {
               Less Than $1/Hour
             </span>
           </Text>
-          <Text as ="h2" className="text-[#F5F5FA] text-center mb-10 md:mb-[189px] font-normal md:leading-[45px]">
+          <Text as ="h2" className="text-[#F5F5FA] text-center mb-10 md:mb-[140px] font-normal md:leading-[45px]">
             <span className="bg-gradient-to-r from-[#5F27CD] to-[#40E0D0] via-[#5F27CD] bg-clip-text text-transparent font-bold">
               {" "}
               Kognitiiv.ai

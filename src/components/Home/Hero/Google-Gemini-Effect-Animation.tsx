@@ -23,7 +23,7 @@ export default function GoogleGeminiEffectAnimation() {
   ];
 
   return (
-    <div className="w-full h-full relative md:bottom-[350px]">
+    <div className="w-full h-full relative md:bottom-[350px] mt-[-40px]">
       <div
         ref={ref}
         className="md:h-[300vh] h-[100vh] w-full overflow-clip"

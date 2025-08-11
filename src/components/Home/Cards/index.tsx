@@ -4,6 +4,11 @@ import Image from "next/image";
 import Text from "@/components/ui/Text";
 
 import handcoin from "@/public/images/home/HandCoins.svg";
+import threeusers from "@/public/images/home/UsersThree.svg";
+import chart from "@/public/images/home/ChartScatter.svg"
+import addressbook from "@/public/images/home/AddressBook.svg";
+import headcircuit from "@/public/images/home/HeadCircuit.svg";
+import headset from "@/public/images/home/Headset.svg";
 
 const Cards = () => {
   return (
@@ -27,7 +32,7 @@ const Cards = () => {
           <div
             style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
-            <Image src={handcoin} alt="" />
+            <Image src={threeusers} alt="" />
             <Text className="text-[14px] font-normal text-black">Broca</Text>
             <Text className="text-[14px] font-bold ">
               AI Marketing & Engagement
@@ -39,7 +44,7 @@ const Cards = () => {
           <div
             style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
-            <Image src={handcoin} alt="" />
+            <Image src={chart} alt="" />
             <Text className="text-[14px] font-normal text-black">
               Occipital
             </Text>
@@ -55,7 +60,7 @@ const Cards = () => {
           <div
             style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
-            <Image src={handcoin} alt="" />
+            <Image src={addressbook} alt="" />
             <Text className="text-[14px] font-normal text-black">
               Hippocampus
             </Text>
@@ -69,7 +74,7 @@ const Cards = () => {
           <div
             style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
-            <Image src={handcoin} alt="" />
+            <Image src={headcircuit} alt="" />
             <Text className="text-[14px] font-normal text-black">
               Cerebellum
             </Text>
@@ -84,7 +89,7 @@ const Cards = () => {
         <div
           style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
           className="w-full md:max-w-[281px] max-w-full md:min-h-[255px] min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
-          <Image src={handcoin} alt="" />
+          <Image src={headset} alt="" />
           <Text className="text-[14px] font-normal text-black">Amygdala</Text>
           <Text className="text-[14px] font-bold ">
             AI Receptionist / Call Filter

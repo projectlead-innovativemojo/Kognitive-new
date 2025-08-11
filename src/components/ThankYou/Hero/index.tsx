@@ -25,11 +25,11 @@ const ThankYouHero = () => {
             {/* </span> */}
           </Text>
           <Text as ="h2" className="text-[#F5F5FA] text-center mb-10 md:mb-[70px] font-normal md:leading-[45px]">
-            <span className=" font-bold">
+            {/* <span className=" font-bold">
               {" "}
               Kognitiiv.ai
-            </span>{" "}
-           will notify you when your AI workforce is ready.
+            </span>{" "} */}
+          {"We'll"} will notify you when your AI workforce is ready.
              <br className="md:block hidden" /> In the meantime, meet your team
           </Text>
          <Image src={videopng} alt="" width={778} height={422} className="mx-auto mb-[86px]" />

@@ -18,7 +18,7 @@ const GoogleGeminiEffect = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("sticky top-0", className)}>
+    <div className={cn("sticky md:top-0 top-[20%]", className)}>
       <svg
         width="1440"
         height="890"

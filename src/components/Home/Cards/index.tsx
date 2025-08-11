@@ -16,10 +16,7 @@ const Cards = () => {
       {/* card 1 */}
       <div className="w-full md:max-w-[281px] max-w-full min-h-[255px] border border-black bg-white rounded-[20px]">
         <div
-          style={{ boxShadow: "-6px -2px 16px 0px #FFFFFFCC", }}
-          // box-shadow: -6px -2px 16px 0px #FFFFFFCC;
-
-// box-shadow: 6px 2px 16px 0px #88A5BF7A;
+          style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A", }}
 
           className="w-full md:max-w-[281px] max-w-full min-h-[255px] flex flex-col justify-center items-center rounded-[20px]">
           <Image src={handcoin} alt="" />
@@ -34,7 +31,7 @@ const Cards = () => {
         {/* card 2 */}
         <div className="w-full md:max-w-[281px] max-w-full mb-[25px] h-[115px] border border-black bg-white rounded-[20px]">
           <div
-            style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
+            style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
             <Image src={threeusers} alt="" />
             <Text className="text-[14px] font-normal text-black mb-[10px]">Broca</Text>
@@ -46,7 +43,7 @@ const Cards = () => {
         {/* card 3 */}
         <div className="w-full md:max-w-[281px] max-w-full min-h-[115px] border border-black bg-white rounded-[20px]">
           <div
-            style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
+            style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
             <Image src={chart} alt="" />
             <Text className="text-[14px] font-normal text-black mb-[10px]">
@@ -62,7 +59,7 @@ const Cards = () => {
         {/* card 4 */}
         <div className="w-full md:max-w-[281px] max-w-full mb-[25px] h-[115px] border border-black bg-white rounded-[20px]">
           <div
-            style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
+            style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
             <Image src={addressbook} alt="" />
             <Text className="text-[14px] font-normal text-black mb-[10px]">
@@ -76,7 +73,7 @@ const Cards = () => {
         {/* card 5 */}
         <div className="w-full md:max-w-[281px] max-w-full  h-[115px] border border-black bg-white rounded-[20px]">
           <div
-            style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
+            style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
             <Image src={headcircuit} alt="" />
             <Text className="text-[14px] font-normal text-black mb-[10px]">
@@ -91,7 +88,7 @@ const Cards = () => {
       {/* card 6 */}
       <div className="w-full md:max-w-[281px] max-w-full min-h-[255px] border border-black bg-white rounded-[20px]">
         <div
-          style={{ boxShadow: "-6px -2px 16px 0px #00000033" }}
+          style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
           className="w-full md:max-w-[281px] max-w-full min-h-[255px] flex flex-col justify-center items-center rounded-[20px]">
           <Image src={headset} alt="" />
           <Text className="text-[14px] font-normal text-black mb-[10px]">Amygdala</Text>

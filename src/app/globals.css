@@ -212,5 +212,17 @@ box-shadow: 0px 10px 15px -5px #5F27CD80;
   width: 100%;
 }
 
+/* Make touch scroll bubble out when you hit edges */
+.listbox-panel {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar{
+        display: none;
+    }
+}
+
 
 

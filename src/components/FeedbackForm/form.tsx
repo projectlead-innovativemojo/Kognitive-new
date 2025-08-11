@@ -4,8 +4,10 @@ import { Listbox } from "@headlessui/react";
 import Image from "next/image";
 import Text from "@/components/ui/Text";
 import feedbackbg from "@/public/images/home/feedbackbg.svg";
+import { useRouter } from "next/navigation";
 
 const FeedbackForm = () => {
+  const router = useRouter();
   const industryOptions = [
     {
       value: "cybersecurity",
@@ -112,6 +114,7 @@ const FeedbackForm = () => {
           interest: "",
           message: "",
         });
+        router.push("/thank-you");
       } else {
         setError(data.error || "Something went wrong");
       }
@@ -124,17 +127,14 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] md:mb-[208px] mb-[101px]">
+    <div id="feedback-form" className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] md:mb-[208px] mb-[101px]">
       <Image
         src={feedbackbg}
         alt=""
         className="absolute top-[33%] left-0"
       />
       <div
-        style={{
-          background:
-            "linear-gradient(179.84deg, #5F27CD 0.14%, #00CEC9 82.39%)",
-        }}
+       
         className="absolute w-full h-full blur-[500px] bottom-0"
       ></div>
       <div className="relative z-10 mx-auto flex flex-col justify-center items-center px-5">
@@ -285,7 +285,7 @@ const FeedbackForm = () => {
           </button>
         </div>
       </form>
-        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[120px] px-5 md:text-left text-center">
+        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[80px] px-5  text-center">
           First 100 on the waitlist get early access + bonus features
         </Text>
         </div>

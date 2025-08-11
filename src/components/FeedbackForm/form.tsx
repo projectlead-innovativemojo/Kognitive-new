@@ -1,36 +1,48 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import Text from "@/components/ui/Text";
-import feedbackbg from "@/public/images/home/feedbackbg.svg";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
+import Text from "@/components/ui/Text";
+
+import feedbackbg from "@/public/images/home/feedbackbg.svg";
+
+import IndustryDropdown from "../ui/select";
 
 const FeedbackForm = () => {
   const router = useRouter();
   const industryOptions = [
-    { value: "disabled", label: "What is your interest?", bullets: [] },
+    {
+      value: "disabled",
+      label: "What is your interest?",
+      bullets: [] as string[],
+    },
     {
       value: "cybersecurity",
       label: "Cybersecurity & IT Services",
-      bullets: [],
+      bullets: [] as string[],
     },
     {
       value: "healthcare",
       label: "Medical Offices & Healthcare Clinics",
-      bullets: [],
+      bullets: [] as string[],
     },
     {
       value: "real-estate",
       label: "Real Estate & Property Management",
-      bullets: [],
+      bullets: [] as string[],
     },
-    { value: "legal", label: "Law Firms & Legal Services", bullets: [] },
+    {
+      value: "legal",
+      label: "Law Firms & Legal Services",
+      bullets: [] as string[],
+    },
     {
       value: "home-services",
       label: "Home Services (HVAC, Plumbing, Landscaping, etc.)",
-      bullets: [],
+      bullets: [] as string[],
     },
-    { value: "other", label: "Other", bullets: [] },
+    { value: "other", label: "Other", bullets: [] as string[] },
   ];
 
   const [form, setForm] = useState({
@@ -46,6 +58,8 @@ const FeedbackForm = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
+  type Option = { value: string; label: string; bullets: string[] };
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -54,16 +68,12 @@ const FeedbackForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const option = industryOptions.find((opt) => opt.value === e.target.value);
-    if (option) {
-      setSelectedIndustry(option);
-      const bulletsText =
-        option.bullets.length > 0
-          ? "\n" + option.bullets.map(() => "• ").join("\n")
-          : "";
-      setForm({ ...form, interest: option.label + bulletsText });
-    }
+  const handleIndustryChange = (opt: Option) => {
+    setSelectedIndustry(opt);
+    const bulletsText = opt.bullets.length
+      ? "\n" + opt.bullets.map(() => "• ").join("\n")
+      : "";
+    setForm((prev) => ({ ...prev, interest: opt.label + bulletsText }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -134,7 +144,6 @@ const FeedbackForm = () => {
               />
             </div>
           </div>
-
           <div className="w-full mb-[30px]">
             <input
               type="email"
@@ -146,7 +155,6 @@ const FeedbackForm = () => {
               required
             />
           </div>
-
           <div className="w-full mb-[30px]">
             <input
               type="text"
@@ -158,33 +166,43 @@ const FeedbackForm = () => {
               required
             />
           </div>
-
           {/* Native select with first option disabled */}
-          <div className="border border-[#0F0F1A] h-[50px] mb-[30px] rounded-[10px] bg-white">
+          {/* <div className="border border-[#0F0F1A] h-[50px] mb-[30px] rounded-[10px] bg-white w-full max-w-[100vw] relative overflow-hidden">
             <select
               value={selectedIndustry.value}
               onChange={handleIndustryChange}
-              
-              className="px-[10px] py-[10px] rounded-[14px] w-full text-left bg-white outline-none h-full text-[#0F0F1A]">
+              className="text-[16px] rounded-[14px] w-full text-left bg-white outline-none h-full text-[#0F0F1A]">
               {industryOptions.map((option, index) => (
                 <option
                   key={option.value}
                   value={option.value}
                   disabled={index === 0}
-                  className={index === 0 ? "text-gray-400" : "text-black"}>
+                  className={
+                    index === 0
+                      ? "text-gray-400 text-[16px] text-wrap"
+                      : "text-black text-[16px]"
+                  }>
                   {index === 0 ? option.label : `${index}- ${option.label}`}
                 </option>
               ))}
             </select>
+          </div> */}
+          <div className="mb-[30px]">
+            <IndustryDropdown
+              options={industryOptions}
+              value={
+                selectedIndustry?.value === "disabled" ? null : selectedIndustry
+              }
+              onChange={handleIndustryChange}
+              placeholder={industryOptions[0].label}
+            />
           </div>
-
           {success && (
             <div className="text-green-600 my-2 text-center">
               Thank you for your feedback!
             </div>
           )}
           {error && <div className="text-red-600 mb-2">{error}</div>}
-
           <div className="rounded-[12px]">
             <button
               type="submit"

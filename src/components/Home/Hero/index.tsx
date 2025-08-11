@@ -13,7 +13,7 @@ const Hero = () => {
       className="w-full h-full">
       <div className="w-full h-full flex justify-center items-center flex-col">
         <Navbar />
-        <div className="w-full h-full max-w-[1200px] md:mt-[128px] mt-[40px]">
+        <div className="w-full h-full max-w-[1200px] md:mt-[128px] mt-[40px] px-4">
           <BackgroundBeamsWithCollision>
           <Text as="h1" className="md:mb-[50px] mb-[80px] text-[#F5F5FA] text-center leading-[45px]">
             Hire 6 AI Voice Employees for{" "}

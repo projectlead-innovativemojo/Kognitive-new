@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Text from "@/components/ui/Text";
+import ReviewsMobileSlider from "./MobileSlider";
 
 import review1 from "@/public/images/home/review1.png";
 import review2 from "@/public/images/home/review2.png";
@@ -14,8 +15,8 @@ import x from "@/public/images/home/twitte.png";
 
 const Reviews = () => {
   return (
-    <div id="reviews">
-      <div className="w-full h-full flex flex-wrap gap-[25px] justify-center items-center max-w-[1260px] mx-auto mb-[96px] px-5">
+    <div id="reviews" className="">
+      <div className="w-full h-full flex-wrap gap-[25px] justify-center items-center max-w-[1260px] mx-auto mb-[96px] px-5 hidden md:flex">
         {/* review 1 */}
         <div className="w-full  max-w-[385px] min-h-[395px] rounded-[10px] flex flex-col justify-center items-center px-5 border-3 border-[#0F0F1A]">
           <Image src={review1} alt="" width={60} height={60} />
@@ -56,6 +57,7 @@ const Reviews = () => {
           </Text>
         </div>
       </div>
+      <ReviewsMobileSlider/>
       <div className="w-full max-w-[650px] mx-auto px-5">
         <Text className="text-[#0F0F1A] text-[24px] font-medium text-center mb-[61px]">
           We’ll be showcasing how each one works on social media
@@ -79,12 +81,12 @@ const Reviews = () => {
           </Link>
         </div>
       </div>
-      <div
+      {/* <div
         style={{
           background:
             "#000000",
         }}
-        className="w-full h-[2px] md:mb-[50px] mb-[40px]"></div>
+        className="w-full h-[2px] md:mb-[50px] mb-[40px]"></div> */}
     </div>
   );
 };

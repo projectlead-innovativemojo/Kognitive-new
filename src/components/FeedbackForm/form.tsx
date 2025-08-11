@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Listbox } from "@headlessui/react";
 import Image from "next/image";
 import Text from "@/components/ui/Text";
 import feedbackbg from "@/public/images/home/feedbackbg.svg";
@@ -9,66 +8,31 @@ import { useRouter } from "next/navigation";
 const FeedbackForm = () => {
   const router = useRouter();
   const industryOptions = [
+    { value: "disabled", label: "What is your interest?", bullets: [] },
     {
       value: "cybersecurity",
       label: "Cybersecurity & IT Services",
       bullets: [],
-      // bullets: [
-      //   "These companies already value automation and tech.",
-      //   "They often get <strong>high-volume, low-complexity calls</strong> (password resets, FAQs, onboarding) that are <strong>perfect for AI agents</strong>.",
-      //   "Bonus: They’ll appreciate the technical capabilities like RAG, STT/TTS, and GCP infrastructure.",
-      // ],
     },
     {
       value: "healthcare",
       label: "Medical Offices & Healthcare Clinics",
       bullets: [],
-
-      // bullets: [
-      //   "Constant calls for <strong>appointments, insurance questions, lab results, follow-ups</strong> — most of which can be automated.",
-      //   "High pressure on admin staff = big opportunity to offload work to a friendly AI receptionist.",
-      //   "HIPAA-safe language in your messaging will be a big win here.",
-      // ],
     },
     {
       value: "real-estate",
       label: "Real Estate & Property Management",
       bullets: [],
-
-      // bullets: [
-      //   "They deal with <strong>renters, buyers, sellers, maintenance calls</strong>, and a ton of scheduling.",
-      //   "AI agents can handle <strong>after-hours inquiries</strong>, free up leasing agents, and provide 24/7 lead capture.",
-      //   "High churn and high lead cost = your system can help improve conversion.",
-      // ],
     },
-    {
-      value: "legal",
-      label: "Law Firms & Legal Services",
-      bullets: [],
-
-      // bullets: [
-      //   "Many small-to-midsize law firms need help managing intake calls, appointment setting, and follow-ups.",
-      //   "AI can act as a legal intake assistant — especially for firms that don’t want to miss leads.",
-      //   "You can pitch this as a way to filter tire-kickers while keeping real leads warm.",
-      // ],
-    },
+    { value: "legal", label: "Law Firms & Legal Services", bullets: [] },
     {
       value: "home-services",
       label: "Home Services (HVAC, Plumbing, Landscaping, etc.)",
       bullets: [],
-
-      // bullets: [
-      //   "AI agents can <strong>book appointments, provide availability, and answer common questions</strong> while the team is in the field.",
-      //   "These companies often miss calls or get overwhelmed during peak season.",
-      //   "They typically <strong>don’t have a call center</strong>, so a reliable AI “receptionist” feels like a huge upgrade.",
-      // ],
     },
-    {
-      value: "other",
-      label: "Other",
-      bullets: [],
-    },
+    { value: "other", label: "Other", bullets: [] },
   ];
+
   const [form, setForm] = useState({
     name: "",
     lastName: "",
@@ -90,15 +54,16 @@ const FeedbackForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleIndustryChange = (option: (typeof industryOptions)[0]) => {
-    setSelectedIndustry(option);
-    // Compose the full option content as plain text with bullets
-    const bulletsText =
-      option.bullets.length > 0
-        ? "\n" +
-          option.bullets.map(() => "• ").join("\n")
-        : "";
-    setForm({ ...form, interest: option.label + bulletsText });
+  const handleIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const option = industryOptions.find((opt) => opt.value === e.target.value);
+    if (option) {
+      setSelectedIndustry(option);
+      const bulletsText =
+        option.bullets.length > 0
+          ? "\n" + option.bullets.map(() => "• ").join("\n")
+          : "";
+      setForm({ ...form, interest: option.label + bulletsText });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -138,142 +103,80 @@ const FeedbackForm = () => {
   return (
     <div
       id="feedback-form"
-      className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121 px] md:mb-[78px] mb-[101px]">
+      className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121px] md:mb-[78px] mb-[101px]">
       <Image src={feedbackbg} alt="" className="absolute top-[33%] left-0" />
       <div className="absolute w-full h-full blur-[500px] bottom-0"></div>
       <div className="relative z-10 mx-auto flex flex-col justify-center items-center px-5">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-full md:max-w-[677px] relative z-10 py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px]">
-          <div className="flex flex-col gap-[32px] md:gap-[12px] md:flex-row mb-[32px]">
-            <div className="w-full max-w-full md:max-w-1/2 element-with-gradient-border-rounded-input ">
-              <div className="inner-content-input w-full">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={form.name}
-                  onChange={handleChange}
-                  className="px-[10px] py-[10px] w-full h-full max-w-full rounded-[13px] text-black outline-none bg-white"
-                  required
-                />
-              </div>
-            </div>
-            <div className="w-full max-w-full md:max-w-1/2 element-with-gradient-border-rounded-input ">
-              <div className="inner-content-input w-full">
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  value={form.lastName}
-                  onChange={handleChange}
-                  className="px-[10px] py-[10px] w-full h-full max-w-full rounded-[13px] text-black outline-none bg-white "
-                  required
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full max-w-full element-with-gradient-border-rounded-email mb-[30px]">
-            <div className="inner-content-email w-full">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={form.email}
-                onChange={handleChange}
-                className="px-[10px] py-[10px] w-full rounded-[13px] text-black outline-none bg-white"
-                required
-              />
-            </div>
-          </div>
-
-          <div className="w-full max-w-full element-with-gradient-border-rounded-input mb-[30px]">
-            <div className="inner-content-input w-full">
+          <div className="flex flex-col gap-[32px] md:gap-[12px] md:flex-row mb-[30px]">
+            <div className="w-full">
               <input
                 type="text"
-                name="company"
-                placeholder="Company"
-                value={form.company}
-                required
+                name="name"
+                placeholder="Name"
+                value={form.name}
                 onChange={handleChange}
-                className="px-[10px] py-[10px] w-full rounded-[13px] text-black outline-none bg-white"
+                className="px-[10px] py-[10px] w-full h-[50px] rounded-[10px] text-black border border-[#0F0F1A] outline-none bg-white"
+                required
+              />
+            </div>
+            <div className="w-full">
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={form.lastName}
+                onChange={handleChange}
+                className="px-[10px] py-[10px] w-full h-[50px] rounded-[10px] text-black border border-[#0F0F1A] outline-none bg-white"
+                required
               />
             </div>
           </div>
-          {/*         <div className="w-full max-w-full element-with-gradient-border-rounded-input mb-[30px]">
-           */}
-          <div className="element-with-gradient-border-rounded-input mb-[30px]">
-            <Listbox value={selectedIndustry} onChange={handleIndustryChange}>
-              <div className="relative">
-                <Listbox.Button className="px-[10px] py-[10px] w-full rounded-[13px] font-rubik text-[#0F0F1A] bg-white outline-none border-none text-left relative">
-                  {selectedIndustry ? (
-                    <span>{selectedIndustry.label}</span>
-                  ) : (
-                    <span className="text-gray-400">
-                      What is your industry?
-                    </span>
-                  )}
-                  {/* Dropdown arrow icon */}
-                  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M6 8L10 12L14 8"
-                        stroke="#0F0F1A"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </Listbox.Button>
-                <Listbox.Options className="absolute z-10 mt-3 w-full bg-white shadow-lg rounded-[10px] overflow-hidden border border-[#0F0F1A]">
-                  <div className="max-h-60 overflow-auto">
-                    {industryOptions.map((option, index) => (
-                      <Listbox.Option
-                        key={option.value}
-                        value={option}
-                        className={({ active }) =>
-                          `cursor-pointer select-none px-4 py-3 ${
-                            active ? "bg-gray-100" : ""
-                          }`
-                        }>
-                        <div>
-                          <div className="font-semibold text-[18px] text-[#0F0F1A]">
-                            {index + 1}- {option.label}
-                          </div>
-                          {option.bullets.length > 0 && (
-                            <ul className="list-disc pl-5 text-[16px] font-rubik text-[#0F0F1A] mt-0.5 space-y-0.5">
-                              {option.bullets.map((b, i) => (
-                                <li
-                                  className="font-rubik"
-                                  key={i}
-                                  dangerouslySetInnerHTML={{ __html: b }}
-                                />
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      </Listbox.Option>
-                    ))}
-                  </div>
-                </Listbox.Options>
-              </div>
-            </Listbox>
+
+          <div className="w-full mb-[30px]">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+              className="px-[10px] py-[10px] w-full rounded-[10px] border border-[#0F0F1A] h-[50px] text-black outline-none bg-white"
+              required
+            />
           </div>
-          {/* Show industry bullets if selected */}
-          {/* {selectedIndustry && selectedIndustry.bullets.length > 0 && (
-          <ul className="mb-4 ml-2 text-sm text-[#0F0F1A] list-disc list-inside">
-            {selectedIndustry.bullets.map((b, i) => (
-              <li key={i}>{b}</li>
-            ))}
-          </ul>
-        )} */}
+
+          <div className="w-full mb-[30px]">
+            <input
+              type="text"
+              name="company"
+              placeholder="Company"
+              value={form.company}
+              onChange={handleChange}
+              className="px-[10px] py-[10px] w-full rounded-[10px] text-black outline-none bg-white border border-[#0F0F1A] h-[50px]"
+              required
+            />
+          </div>
+
+          {/* Native select with first option disabled */}
+          <div className="border border-[#0F0F1A] h-[50px] mb-[30px] rounded-[10px] bg-white">
+            <select
+              value={selectedIndustry.value}
+              onChange={handleIndustryChange}
+              
+              className="px-[10px] py-[10px] rounded-[14px] w-full text-left bg-white outline-none h-full text-[#0F0F1A]">
+              {industryOptions.map((option, index) => (
+                <option
+                  key={option.value}
+                  value={option.value}
+                  disabled={index === 0}
+                  className={index === 0 ? "text-gray-400" : "text-black"}>
+                  {index === 0 ? option.label : `${index}- ${option.label}`}
+                </option>
+              ))}
+            </select>
+          </div>
 
           {success && (
             <div className="text-green-600 my-2 text-center">
@@ -291,7 +194,7 @@ const FeedbackForm = () => {
             </button>
           </div>
         </form>
-        <Text className="text-[24px] font-medium text-[#0F0F1A] mt-[75px] px-5  text-center">
+        <Text className="text-[23px] font-medium text-[#0F0F1A] mt-[75px] px-5 text-center">
           First 100 on the waitlist get early access + bonus features
         </Text>
       </div>

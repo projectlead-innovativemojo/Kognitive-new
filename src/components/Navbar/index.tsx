@@ -35,9 +35,9 @@ export default function Header() {
   return (
     <header className="md:h-[150px] w-full mx-auto flex justify-center items-center px-4">
       <div className="w-full max-w-[1260px] mx-auto mt-[51px]">
-        <div className=" rounded-[24px] p-[2px] overflow-hidden border border-[#0F0F1A] max-w-[1260px]">
-        <div className="shadow-lg">
-          <div className="w-full h-full bg-[#0F0F1A] inner-content  flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] primary-shadow">
+        <div className=" rounded-[24px] p-[2px] overflow-hidden md:border md:border-[#0F0F1A] max-w-[1260px]">
+        <div className="md:shadow-lg">
+          <div className="w-full h-full md:bg-[#0F0F1A] inner-content  flex items-center justify-between  mx-auto px-6 py-[20px] md:py-[20px] md:primary-shadow">
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/Logo.svg"
@@ -69,7 +69,7 @@ export default function Header() {
 
               <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] md:inline-block hidden primary-shadow ">
                 <Button 
-                  className="bg-transparent text-[#F5F5FA] border border-white text-[18px] w-[180px] h-[50px] rounded-[10px] cursor-pointer"
+                  className="bg-transparent text-[#F5F5FA] border border-white text-[18px] w-[180px] h-[50px] rounded-[13px] cursor-pointer"
                   onClick={() => {
                     document.getElementById('feedback-form')?.scrollIntoView({ behavior: 'smooth' });
                   }}
@@ -141,7 +141,7 @@ export default function Header() {
                 </Link>
                 <div className="p-[2px] rounded-[12px] border border-[#0F0F1A] primary-shadow ">
                 <Button 
-                  className="bg-white text-primary text-[18px] w-full h-[50px] rounded-[10px] cursor-pointer"
+                  className="bg-white text-primary text-[18px] w-full h-[50px] rounded-[13px] cursor-pointer"
                   onClick={() => {
                     setMobileMenuOpen(false);
                     document.getElementById('feedback-form')?.scrollIntoView({ behavior: 'smooth' });

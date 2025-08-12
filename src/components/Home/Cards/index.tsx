@@ -29,7 +29,7 @@ const Cards = () => {
 
       <div className="w-full md:max-w-[281px] max-w-full">
         {/* card 2 */}
-        <div className="w-full md:max-w-[281px] max-w-full mb-[25px] h-[115px] border border-black bg-white rounded-[20px]">
+        <div className="w-full md:max-w-[281px] max-w-full mb-[32px] md:mb-[25px] h-[115px] border border-black bg-white rounded-[20px]">
           <div
             style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">
@@ -57,7 +57,7 @@ const Cards = () => {
       </div>
       <div className="w-full md:max-w-[281px] max-w-full">
         {/* card 4 */}
-        <div className="w-full md:max-w-[281px] max-w-full mb-[25px] h-[115px] border border-black bg-white rounded-[20px]">
+        <div className="w-full md:max-w-[281px] max-w-full mb-[32px] md:mb-[25px] h-[115px] border border-black bg-white rounded-[20px]">
           <div
             style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
             className="w-full md:max-w-[281px] max-w-full min-h-[115px] flex flex-col justify-center items-center rounded-[20px]">

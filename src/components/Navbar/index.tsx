@@ -37,7 +37,7 @@ export default function Header() {
       <div className="w-full max-w-[1260px] mx-auto mt=[51px]">
         <div className="rounded-[24px] p-[2px] overflow-hidden md:border md:border-[#0F0F1A] max-w-[1260px]">
           <div className="md:shadow-lg">
-            <div className="w-full h-full md:bg-[#0F0F1A] inner-content flex items-center justify-between mx-auto px-6 py-[20px] md:py-[20px] md:primary-shadow">
+            <div className="w-full h-full md:bg-[#0F0F1A] inner-content flex items-center justify-between mx-auto py-[20px] md:py-[20px] md:primary-shadow">
               <Link href="/" className="flex items-center">
                 <Image
                   src="/images/Logo.svg"
@@ -52,14 +52,14 @@ export default function Header() {
               <div className="flex items-center gap-[128px]">
                 <nav className="hidden md:flex items-center space-x-[25px]">
                   <Link
-                    href="/#reviews"
+                    href="/#our-employees"
                     className={cn(
                       "text-[#F5F5FA] text-[18px] cursor-pointer",
                       pathname === "/" && ""
                     )}
                     onClick={(e) => {
                       e.preventDefault();
-                      router.push("/#reviews");
+                      router.push("/#our-employees");
                     }}>
                     Our Employees
                   </Link>
@@ -100,7 +100,7 @@ export default function Header() {
         <div className="w-full px-8">
           <div className="bg-white text-primary text-[18px] w-full h-[50px] rounded-[13px] cursor-pointer flex justify-center items-center">
             <Link
-              href="/#reviews"
+              href="/#our-employees"
               className="text-[18px]"
               onClick={()=>{
                 setMobileMenuOpen(false);

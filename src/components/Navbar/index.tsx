@@ -37,7 +37,7 @@ export default function Header() {
       <div className="w-full max-w-[1260px] mx-auto mt=[51px]">
         <div className="rounded-[24px] p-[2px] overflow-hidden md:border md:border-[#0F0F1A] max-w-[1260px]">
           <div className="md:shadow-lg">
-            <div className="w-full h-full md:bg-[#0F0F1A] inner-content flex items-center justify-between mx-auto py-[20px] md:py-[20px] md:primary-shadow">
+            <div className="w-full h-full md:bg-[#0F0F1A] inner-content flex items-center justify-between mx-auto py-[20px] md:px-6 md:py-[20px] md:primary-shadow">
               <Link href="/" className="flex items-center">
                 <Image
                   src="/images/Logo.svg"

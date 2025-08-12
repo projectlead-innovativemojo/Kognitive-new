@@ -12,13 +12,13 @@ import headset from "@/public/images/home/Headset.svg";
 
 const Cards = () => {
   return (
-    <div id="our-employees" className="w-full h-full max-w-[1260px] mx-auto flex flex-wrap justify-center items-center md:gap-[23px] gap-6 mb-[97px] md:mb-[121px] px-5">
+    <div id="our-employees" className="w-full h-full max-w-[1260px] mx-auto flex flex-wrap justify-center items-center md:gap-[23px] gap-[32px] mb-[97px] md:mb-[121px] px-5">
       {/* card 1 */}
-      <div className="w-full md:max-w-[281px] max-w-full min-h-[255px] border border-black bg-white rounded-[20px]">
+      <div className="w-full md:max-w-[281px] max-w-full min-h-[115px] md:min-h-[255px] border border-black bg-white rounded-[20px]">
         <div
           style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A", }}
 
-          className="w-full md:max-w-[281px] max-w-full min-h-[255px] flex flex-col justify-center items-center rounded-[20px]">
+          className="w-full md:max-w-[281px] max-w-full min-h-[115px] md:min-h-[255px] flex flex-col justify-center items-center rounded-[20px]">
           <Image src={handcoin} alt="" />
           <Text className="text-[14px] font-normal text-black mb-[10px]">Prefrontal</Text>
           <Text className="text-[14px] font-bold ">
@@ -86,10 +86,10 @@ const Cards = () => {
         </div>
       </div>
       {/* card 6 */}
-      <div className="w-full md:max-w-[281px] max-w-full min-h-[255px] border border-black bg-white rounded-[20px]">
+      <div className="w-full md:max-w-[281px] max-w-full min-h-[115px] md:min-h-[255px] border border-black bg-white rounded-[20px]">
         <div
           style={{ boxShadow: "6px 2px 16px 0px #88A5BF7A" }}
-          className="w-full md:max-w-[281px] max-w-full min-h-[255px] flex flex-col justify-center items-center rounded-[20px]">
+          className="w-full md:max-w-[281px] max-w-full min-h-[115px] md:min-h-[255px] flex flex-col justify-center items-center rounded-[20px]">
           <Image src={headset} alt="" />
           <Text className="text-[14px] font-normal text-black mb-[10px]">Amygdala</Text>
           <Text className="text-[14px] font-bold ">

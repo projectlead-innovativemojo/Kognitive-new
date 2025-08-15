@@ -48,7 +48,6 @@ export async function POST(request: NextRequest) {
       html: `
         <p>Dear ${name} ${lastName},</p>
         <p>Thank you for providing the details. We'll get back to you as soon as possible.</p>
-        <p><b> We have received your following details:</b></p>
       `,
     };
 

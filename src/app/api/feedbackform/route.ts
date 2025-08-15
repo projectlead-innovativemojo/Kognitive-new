@@ -49,14 +49,6 @@ export async function POST(request: NextRequest) {
         <p>Dear ${name} ${lastName},</p>
         <p>Thank you for providing the details. We'll get back to you as soon as possible.</p>
         <p><b> We have received your following details:</b></p>
-        <ul>
-          <li><b>Name:</b> ${name} ${lastName}</li>
-          <li><b>Email:</b> ${email}</li>
-          <li><b>Company:</b> ${company}</li>
-          <li><b>Interest:</b> <b>${interestHeading}</b>
-            ${interestBullets.length > 0 ? `<ul style="margin: 4px 0 0 18px;">${interestBullets.map((b: string) => `<li>${b}</li>`).join('')}</ul>` : ''}
-          </li>
-        </ul>
       `,
     };
 

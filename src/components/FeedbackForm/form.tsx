@@ -206,7 +206,7 @@ const FeedbackForm = () => {
           <div className="rounded-[12px]">
             <button
               type="submit"
-              className="w-full h-[50px] rounded-[10px] bg-[#0F0F1A] text-white text-[18px] primary-shadow"
+              className="w-full h-[50px] rounded-[10px] bg-[#0F0F1A] text-white text-[18px] primary-shadow cursor-pointer"
               disabled={submitting}>
               {submitting ? "Submitting..." : "Join the Waitlist"}
             </button>

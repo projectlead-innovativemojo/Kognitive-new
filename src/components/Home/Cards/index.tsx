@@ -13,6 +13,13 @@ import headcircuit from "@/public/images/home/Vector-5.svg";
 import headset from "@/public/images/home/Vector-3.svg";
 import usergear from "@/public/images/home/Vector-4.svg";
 
+import handcoinsblack from "@/public/images/home/HandCoins.svg";
+import threeuserBlck from "@/public/images/home/UsersThree.svg";
+import addressbookBlck from "@/public/images/home/AddressBook.svg";
+import headcircuitBlck from "@/public/images/home/HeadCircuit.svg";
+import headsetBlck from "@/public/images/home/Headset.svg";
+import usergearBlck from "@/public/images/home/UserGear.svg";
+
 const Cards = () => {
   const [isCardClicked, setIsCardClicked] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -56,14 +63,24 @@ const Cards = () => {
             >
               {/* Visible content */}
               <div className="w-full md:max-w-[281px] max-w-full flex flex-col justify-center items-center rounded-[20px] min-h-[211px]">
-                <Image src={handcoin} alt="" className="mb-2" />
-                <Text className="text-[14px] font-normal text-white mb-[10px]">
+                <Image
+                  src={handcoinsblack}
+                  alt=""
+                  className="block group-hover:hidden"
+                />
+
+                <Image
+                  src={handcoin}
+                  alt=""
+                  className="hidden group-hover:block"
+                />
+                <Text className="text-[14px] font-normal group-hover:text-white mb-[10px] text-black">
                   Prefrontal
                 </Text>
-                <Text className="text-[14px] font-bold text-white">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black">
                   AI Sales Closer
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-10 text-center mt-[14px] mb-[18px]">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-10 text-center mt-[14px] mb-[18px]">
                   Cold calls, qualifies leads, closes deals
                 </Text>
               </div>
@@ -78,8 +95,8 @@ const Cards = () => {
                     : "group-hover:max-h-[500px] group-hover:opacity-100"
                 } max-h-0 opacity-0 transition-all duration-1000`}
               >
-                <div className="bg-opacity-70 text-white w-full">
-                  <Text className="text-[14px] text-white text-center mb-[24px] px-4">
+                <div className="bg-opacity-70 w-full">
+                  <Text className="text-[14px] group-hover:text-white text-center mb-[24px] px-4 text-black">
                     Think of Prefrontal as your unstoppable outbound sales rep.
                     It makes thousands of calls a day, talks to prospects,
                     qualifies them, and books meetings on your calendar.
@@ -87,7 +104,7 @@ const Cards = () => {
                     Perfect for industries like IT, insurance, real estate, and
                     consulting.
                   </Text>
-                  <Text className="text-[14px] text-[#fff]  font-bold text-center mb-[15px] px-4">
+                  <Text className="text-[14px] group-hover:text-[#fff] text-black  font-bold text-center mb-[15px] px-4">
                     This is the “decision-maker” of your business brain—focused,
                     relentless, and built to sell.
                   </Text>
@@ -106,14 +123,23 @@ const Cards = () => {
             >
               {/* Visible content */}
               <div className="w-full md:max-w-[281px] max-w-full  flex flex-col justify-center items-center rounded-[20px] min-h-[211px]">
-                <Image src={headset} alt="" className="mb-2" />
-                <Text className="text-[14px] font-normal text-white mb-[10px]">
+                <Image
+                  src={headset}
+                  alt=""
+                  className="hidden group-hover:block"
+                />
+                <Image
+                  src={headsetBlck}
+                  alt=""
+                  className="block group-hover:hidden"
+                />
+                <Text className="text-[14px] font-normal group-hover:text-white mb-[10px] text-black">
                   Thalamus
                 </Text>
-                <Text className="text-[14px] font-bold text-white">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black">
                   Your AI Receptionist & Call Router
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-10 text-center mt-[14px] mb-[18px]">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-10 text-center mt-[14px] mb-[18px]">
                   Picks up. Routes smartly. Follows up fast
                 </Text>
               </div>
@@ -129,7 +155,7 @@ const Cards = () => {
                 } max-h-0 opacity-0 transition-all duration-1000`}
               >
                 <div className="bg-opacity-70 text-white w-full">
-                  <Text className="text-[14px] text-white text-center mb-[24px] px-4">
+                  <Text className="text-[14px] group-hover:text-white text-center mb-[24px] px-4 text-black">
                     Thalamus answers every single call, instantly. It sends
                     callers to the right department (sales, billing, support),
                     and can text them links, forms, or reminders after the call
@@ -137,7 +163,7 @@ const Cards = () => {
                     <br />
                     No more missed leads. No more confusion
                   </Text>
-                  <Text className="text-[14px] text-[#fff]  font-bold text-center mb-[15px] px-4">
+                  <Text className="text-[14px] group-hover:text-[#fff] text-black  font-bold text-center mb-[15px] px-4">
                     The brain’s “switchboard.” It makes sure every signal gets
                     to the right place.
                   </Text>
@@ -158,14 +184,23 @@ const Cards = () => {
             >
               {/* Visible content */}
               <div className="w-full md:max-w-[281px] max-w-full flex flex-col justify-center items-center rounded-[20px] min-h-[211px]">
-                <Image src={threeusers} alt="" />
-                <Text className="text-[14px] font-normal text-white mb-[10px]">
+                <Image
+                  src={threeusers}
+                  alt=""
+                  className="hidden group-hover:block"
+                />
+                <Image
+                  src={threeuserBlck}
+                  alt=""
+                  className="block group-hover:hidden"
+                />
+                <Text className="text-[14px] font-normal group-hover:text-white mb-[10px] text-black">
                   Broca
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-[35px] text-center">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-[35px] text-center">
                   Your AI Marketing & Engagement Coordinator
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-10 text-center mt-[14px] mb-[18px]">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-10 text-center mt-[14px] mb-[18px]">
                   Content manager. Comment responder. Engagement engine.
                 </Text>
               </div>
@@ -181,14 +216,14 @@ const Cards = () => {
                 } max-h-0 opacity-0 transition-all duration-1000`}
               >
                 <div className="bg-opacity-70 text-white w-full">
-                  <Text className="text-[14px] text-white text-center mb-[24px] px-4">
+                  <Text className="text-[14px] group-hover:text-white text-center mb-[24px] px-4 text-black">
                     Broca posts on social media, responds to DMs and comments,
                     and follows up with leads from your ads automatically—voice
                     or text. <br />
                     It also watches what works and suggests smarter strategies
                     over time
                   </Text>
-                  <Text className="text-[14px] text-[#fff]  font-bold text-center mb-[15px] px-4">
+                  <Text className="text-[14px] group-hover:text-[#fff] text-black  font-bold text-center mb-[15px] px-4">
                     This is your brand’s “voice.” Friendly, consistent, and made
                     to convert attention into action.
                   </Text>
@@ -207,14 +242,23 @@ const Cards = () => {
             >
               {/* Visible content */}
               <div className="w-full md:max-w-[281px] max-w-full flex flex-col justify-center items-center rounded-[20px] min-h-[211px]">
-                <Image src={usergear} alt="" className="mb-2" />
-                <Text className="text-[14px] font-normal text-white mb-[10px]">
+                <Image
+                  src={usergear}
+                  alt=""
+                  className="hidden group-hover:block"
+                />
+                <Image
+                  src={usergearBlck}
+                  alt=""
+                  className="block group-hover:hidden"
+                />
+                <Text className="text-[14px] font-normal group-hover:text-white mb-[10px] text-black">
                   Hippocampus
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-[35px] text-center">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-[35px] text-center">
                   Your AI Training & Knowledge Assistant
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-10 text-center mt-[14px] mb-[18px]">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-10 text-center mt-[14px] mb-[18px]">
                   Onboarding buddy. SOP navigator. FAQ guru
                 </Text>
               </div>
@@ -230,13 +274,13 @@ const Cards = () => {
                 } max-h-0 opacity-0 transition-all duration-1000`}
               >
                 <div className="bg-opacity-70 text-white w-full">
-                  <Text className="text-[14px] text-white text-center mb-[24px] px-4">
+                  <Text className="text-[14px] group-hover:text-white text-center mb-[24px] px-4 text-black">
                     Need to train a new hire or answer customer questions 24/7?
                     Hippocampus can walk people through your processes, dig into
                     your internal knowledge base (Notion, wikis, SOPs), and even
                     train new staff or clients.
                   </Text>
-                  <Text className="text-[14px] text-[#fff]  font-bold text-center mb-[15px] px-4">
+                  <Text className="text-[14px] group-hover:text-[#fff] text-black  font-bold text-center mb-[15px] px-4">
                     The {"“memory”"} center. It holds everything and delivers
                     answers instantly
                   </Text>
@@ -257,14 +301,23 @@ const Cards = () => {
             >
               {/* Visible content */}
               <div className="w-full md:max-w-[281px] max-w-full flex flex-col justify-center items-center rounded-[20px] min-h-[211px]">
-                <Image src={addressbook} alt="" className="mb-2" />
-                <Text className="text-[14px] font-normal text-white mb-[10px]">
+                <Image
+                  src={addressbook}
+                  alt=""
+                  className="hidden group-hover:block"
+                />
+                <Image
+                  src={addressbookBlck}
+                  alt=""
+                  className="block group-hover:hidden"
+                />
+                <Text className="text-[14px] font-normal group-hover:text-white mb-[10px] text-black">
                   Cerebellum
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-[35px] text-center">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-[35px] text-center">
                   Your AI Operations Coordinator
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-10 text-center mt-[14px] mb-[18px]">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-10 text-center mt-[14px] mb-[18px]">
                   Scheduler. Reminder-sender. Logistics hero.
                 </Text>
               </div>
@@ -280,13 +333,13 @@ const Cards = () => {
                 } max-h-0 opacity-0 transition-all duration-1000`}
               >
                 <div className="bg-opacity-70 text-white w-full">
-                  <Text className="text-[14px] text-white text-center mb-[24px] px-4">
+                  <Text className="text-[14px] group-hover:text-white text-center mb-[24px] px-4 text-black">
                     Cerebellum keeps your business running smoothly. It books
                     appointments, sends reminders and confirmations, updates
                     your field team, and tracks service documents without
                     missing a beat.
                   </Text>
-                  <Text className="text-[14px] text-[#fff]  font-bold text-center mb-[15px] px-4">
+                  <Text className="text-[14px] group-hover:text-[#fff] text-black  font-bold text-center mb-[15px] px-4">
                     This is your {"“muscle memory”"}—quiet, precise, and always
                     on time
                   </Text>
@@ -305,14 +358,23 @@ const Cards = () => {
             >
               {/* Visible content */}
               <div className="w-full md:max-w-[281px] max-w-full flex flex-col justify-center items-center rounded-[20px] min-h-[211px]">
-                <Image src={headcircuit} alt="" className="mb-2" />
-                <Text className="text-[14px] font-normal text-white mb-[10px]">
+                <Image
+                  src={headcircuit}
+                  alt=""
+                  className="hidden group-hover:block"
+                />
+                <Image
+                  src={headcircuitBlck}
+                  alt=""
+                  className="block group-hover:hidden"
+                />
+                <Text className="text-[14px] font-normal group-hover:text-white mb-[10px] text-black">
                   Occipital
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-[35px] text-center">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-[35px] text-center">
                   Your AI IT Support Specialist
                 </Text>
-                <Text className="text-[14px] font-bold text-white px-10 text-center mt-[14px] mb-[18px]">
+                <Text className="text-[14px] font-bold group-hover:text-white text-black px-10 text-center mt-[14px] mb-[18px]">
                   Tech troubleshooter. Helpdesk helper.
                 </Text>
               </div>
@@ -328,13 +390,13 @@ const Cards = () => {
                 } max-h-0 opacity-0 transition-all duration-1000`}
               >
                 <div className="bg-opacity-70 text-white w-full">
-                  <Text className="text-[14px] text-white text-center mb-[24px] px-4">
+                  <Text className="text-[14px] group-hover:text-white text-center mb-[24px] px-4 text-black">
                     Occipital is your first line of IT defense. It handles basic
                     tech problems like WiFi issues, login errors, and password
                     resets. If it can’t fix it, it creates a ticket and follows
                     up for you—automatically.
                   </Text>
-                  <Text className="text-[14px] text-[#fff]  font-bold text-center mb-[15px] px-4">
+                  <Text className="text-[14px] group-hover:text-[#fff] text-black  font-bold text-center mb-[15px] px-4">
                     The {"“vision system.”"} It spots problems fast and keeps
                     your business online
                   </Text>

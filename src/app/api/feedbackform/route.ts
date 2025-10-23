@@ -1,8 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+// Simple in-memory rate limiting (use Redis in production)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+
+function checkRateLimit(
+  ip: string,
+  maxRequests: number = 2,
+  windowMs: number = 3600000
+): boolean {
+  const now = Date.now();
+  const key = ip;
+  const current = rateLimitMap.get(key);
+
+  if (!current || now > current.resetTime) {
+    rateLimitMap.set(key, { count: 1, resetTime: now + windowMs });
+    return true;
+  }
+
+  if (current.count >= maxRequests) {
+    return false;
+  }
+
+  current.count++;
+  return true;
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0] ||
+      request.headers.get("x-real-ip") ||
+      request.headers.get("x-client-ip") ||
+      "unknown";
+
+    // Check rate limit (2 requests per hour per IP)
+    if (!checkRateLimit(ip, 2, 3600000)) {
+      return NextResponse.json(
+        { message: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const { name, lastName, email, company, interest } = await request.json();
 
     const transport = nodemailer.createTransport({
@@ -18,10 +57,10 @@ export async function POST(request: NextRequest) {
     // Parse interest into heading and bullets
     let interestHeading = interest;
     let interestBullets: string[] = [];
-    if (interest && interest.includes('\n')) {
-      const [heading, ...bullets] = interest.split('\n');
+    if (interest && interest.includes("\n")) {
+      const [heading, ...bullets] = interest.split("\n");
       interestHeading = heading;
-      interestBullets = bullets.map((b: string) => b.replace(/^•\s*/, ''));
+      interestBullets = bullets.map((b: string) => b.replace(/^•\s*/, ""));
     }
 
     const mailoptionsToAdmin = {
@@ -35,7 +74,13 @@ export async function POST(request: NextRequest) {
           <li><b>Email:</b> ${email}</li>
           <li><b>Company:</b> ${company}</li>
           <li><b>Interest:</b> <b>${interestHeading}</b>
-            ${interestBullets.length > 0 ? `<ul style="margin: 4px 0 0 18px;">${interestBullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
+            ${
+              interestBullets.length > 0
+                ? `<ul style="margin: 4px 0 0 18px;">${interestBullets
+                    .map((b) => `<li>${b}</li>`)
+                    .join("")}</ul>`
+                : ""
+            }
           </li>
         </ul>
       `,

@@ -57,6 +57,7 @@ const FeedbackForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [isAgreed, setIsAgreed] = useState(false);
 
   type Option = { value: string; label: string; bullets: string[] };
 
@@ -113,13 +114,15 @@ const FeedbackForm = () => {
   return (
     <div
       id="feedback-form"
-      className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121px] md:mb-[78px] mb-[101px]">
+      className="w-full md:max-w-[723px] max-w-full relative mx-auto mt-[121px] md:mb-[78px] mb-[101px]"
+    >
       <Image src={feedbackbg} alt="" className="absolute top-[33%] left-0" />
       <div className="absolute w-full h-full blur-[500px] bottom-0"></div>
       <div className="relative z-10 mx-auto flex flex-col justify-center items-center px-5">
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-full md:max-w-[677px] relative z-10 py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px]">
+          className="w-full max-w-full md:max-w-[677px] relative z-10 py-10 px-5 md:p-10 shadow-[0px_7px_29px_0px_#64646F33] bg-white rounded-[12px]"
+        >
           <div className="flex flex-col gap-[32px] md:gap-[12px] md:flex-row mb-[30px]">
             <div className="w-full">
               <input
@@ -203,11 +206,34 @@ const FeedbackForm = () => {
             </div>
           )}
           {error && <div className="text-red-600 mb-2">{error}</div>}
+
+          {/* Checkbox for agreement */}
+          <div className="mb-[30px] flex items-center gap-3">
+            <input
+              type="checkbox"
+              id="agreement"
+              checked={isAgreed}
+              onChange={(e) => setIsAgreed(e.target.checked)}
+              className="w-4 h-4 text-[#0F0F1A] bg-white border border-[#0F0F1A] rounded focus:ring-[#0F0F1A] focus:ring-2"
+            />
+            <label
+              htmlFor="agreement"
+              className="text-sm text-[#0F0F1A] cursor-pointer"
+            >
+              I agree to the terms and conditions
+            </label>
+          </div>
+
           <div className="rounded-[12px]">
             <button
               type="submit"
-              className="w-full h-[50px] rounded-[10px] bg-[#0F0F1A] text-white text-[18px] primary-shadow cursor-pointer"
-              disabled={submitting}>
+              className={`w-full h-[50px] rounded-[10px] text-white text-[18px] primary-shadow ${
+                isAgreed && !submitting
+                  ? "bg-[#0F0F1A] cursor-pointer"
+                  : "bg-gray-400 cursor-not-allowed"
+              }`}
+              disabled={!isAgreed || submitting}
+            >
               {submitting ? "Submitting..." : "Join the Waitlist"}
             </button>
           </div>
